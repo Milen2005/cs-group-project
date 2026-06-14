@@ -8,6 +8,10 @@ app.use(express.json());
 // Auth routes
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
+const uploadRoutes = require('./routes/upload');
+const letterRoutes = require('./routes/letter');
+app.use('/api/letter', letterRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // Connect to MongoDB then start server
 mongoose.connect(process.env.MONGO_URI)
