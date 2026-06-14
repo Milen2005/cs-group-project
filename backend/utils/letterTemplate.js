@@ -1,4 +1,6 @@
-function generateLetter({ tenantName, landlordName, propertyAddress, violation }) {
+const { jsPDF } = require('jspdf');
+
+function generateLetterText({ tenantName, landlordName, propertyAddress, violation }) {
   const today = new Date().toLocaleDateString('en-GB', {
     day: 'numeric', month: 'long', year: 'numeric'
   });
@@ -32,4 +34,36 @@ ${tenantName}
   return letter;
 }
 
-module.exports = generateLetter;
+function generateLetterPDF(letterText) {
+  const doc = new jsPDF({
+    unit: 'mm',
+    format: 'a4',
+  });
+
+  const margin = 20;
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const maxLineWidth = pageWidth - margin * 2;
+
+  doc.setFont('Times', 'normal');
+  doc.setFontSize(12);
+
+  const lines = doc.splitTextToSize(letterText, maxLineWidth);
+
+  let y = margin;
+  const lineHeight = 7;
+  const pageHeight = doc.internal.pageSize.getHeight();
+
+  lines.forEach((line) => {
+    if (y > pageHeight - margin) {
+      doc.addPage();
+      y = margin;
+    }
+    doc.text(line, margin, y);
+    y += lineHeight;
+  });
+
+  // Returns PDF as a Buffer
+  return Buffer.from(doc.output('arraybuffer'));
+}
+
+module.exports = { generateLetterText, generateLetterPDF };
