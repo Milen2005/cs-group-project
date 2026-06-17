@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RentRight Lease Analysis Results - AI-powered tenant compliance assessment. Review security deposits, early termination, and repairs.">
+    <title>RentRight | Lease Analysis Results</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="results-page-bg">
+
+    <!-- Header Navbar -->
+    <header class="app-header landing-header results-header">
+        <div class="header-logo" id="homeLogoBtn" style="cursor:pointer;">
+            <svg class="header-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 50 16 L 84 44 V 82 H 16 V 44 Z" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="7.5" fill="var(--primary-color)" />
+                <path d="M 37 73 A 13 13 0 0 1 50 60 A 13 13 0 0 1 63 73" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" />
+            </svg>
+            <span class="header-brand-text-dark font-eight">RentRight</span>
+        </div>
+        <nav class="landing-nav">
+            <a href="landing.html" class="nav-link-landing">Home</a>
+            <a href="#" class="nav-link-landing" id="navLegalAid">Legal Aid</a>
+            <a href="landing.html#features" class="nav-link-landing">Resources</a>
+        </nav>
+        <div class="landing-actions">
+            <a href="index.html" class="signin-link">Sign In</a>
+            <a href="signup.html" class="btn-join-pill">Join</a>
+        </div>
+    </header>
+
+    <!-- Main Section Wrapper -->
+    <main class="results-wrapper">
+
+        <!-- 1. Scanning State / Loading Screen (Visible on page load) -->
+        <div class="scan-container-card" id="scannerScreen">
+            <div class="scanner-header">
+                <span class="scanner-pulse-dot"></span>
+                <h3>AI Lease Scanner Active</h3>
+                <span class="scanner-tag">Processing document...</span>
+            </div>
+            
+            <div class="document-scans-visual">
+                <div class="horizontal-scanning-bar"></div>
+                <div class="dummy-doc-preview">
+                    <div class="mock-line w-100"></div>
+                    <div class="mock-line w-75"></div>
+                    <div class="mock-line w-90 highlighted-scan-alert"></div>
+                    <div class="mock-line w-80"></div>
+                    <div class="mock-line w-60 highlighted-scan-warning"></div>
+                </div>
+            </div>
+
+            <!-- Progress Bar Section -->
+            <div class="scanner-progress-section">
+                <div class="progress-info-row">
+                    <span class="progress-title">Scanning Lease Document</span>
+                    <span class="progress-percentage" id="progressPercent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBarFill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Scanning Checklist Steps -->
+            <div class="scan-checklist">
+                <div class="checklist-item" id="step1">
+                    <span class="status-indicator-spinner"></span>
+                    <span class="step-label">Text Extraction</span>
+                </div>
+                <div class="checklist-item" id="step2">
+                    <span class="status-indicator-pending"></span>
+                    <span class="step-label">Clause Segmentation</span>
+                </div>
+                <div class="checklist-item" id="step3">
+                    <span class="status-indicator-pending"></span>
+                    <span class="step-label">Legal Compliance Review</span>
+                </div>
+                <div class="checklist-item" id="step4">
+                    <span class="status-indicator-pending"></span>
+                    <span class="step-label">Risk Assessment</span>
+                </div>
+                <div class="checklist-item" id="step5">
+                    <span class="status-indicator-pending"></span>
+                    <span class="step-label">Report Generation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Results Section (Smooth Fade-In Card once progress is 100%) -->
+        <div class="results-card-container hidden" id="resultsReportCard">
+            
+            <!-- Success Banner State -->
+            <div class="results-success-header">
+                <div class="success-checkmark-circle">
+                    <svg class="success-checkmark-svg" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle-path" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark-check-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+                <h2 class="success-title">Lease Analysis Complete</h2>
+                <p class="success-subtitle">Your lease has been successfully reviewed by our AI system.</p>
+            </div>
+
+            <!-- Summary Statistics Grid -->
+            <div class="stats-summary-grid">
+                <div class="stat-card-item">
+                    <span class="stat-num-val">42</span>
+                    <span class="stat-label-title">Clauses Analyzed</span>
+                </div>
+                <div class="stat-card-item">
+                    <span class="stat-num-val color-amber">3</span>
+                    <span class="stat-label-title">Potential Issues Found</span>
+                </div>
+                <div class="stat-card-item radial-gauge-container">
+                    <div class="circular-score-gauge">
+                        <svg viewBox="0 0 36 36" class="circular-chart-results">
+                            <path class="circle-bg-results" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill-results" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="21.5" class="percentage-results-text">92%</text>
+                        </svg>
+                    </div>
+                    <span class="stat-label-title">Compliance Score</span>
+                </div>
+                <div class="stat-card-item">
+                    <span class="stat-num-val risk-low-badge">Low</span>
+                    <span class="stat-label-title">Risk Level</span>
+                </div>
+            </div>
+
+            <!-- AI Summary Callout Box -->
+            <div class="ai-summary-callout">
+                <div class="ai-summary-header">
+                    <svg class="sparkle-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <h4>AI Analysis Executive Summary</h4>
+                </div>
+                <p class="ai-summary-text">
+                    "This lease is generally compliant with tenant protection guidelines. However, several clauses should be reviewed carefully before signing."
+                </p>
+            </div>
+
+            <!-- Compliance Status Breakdown Bar / Navigation -->
+            <div class="status-summary-bar">
+                <div class="status-tab green-tab">
+                    <span class="status-dot-green"></span>
+                    <span class="status-tab-text">Compliant Clauses (39)</span>
+                </div>
+                <div class="status-tab yellow-tab">
+                    <span class="status-dot-yellow"></span>
+                    <span class="status-tab-text">Items Requiring Attention (2)</span>
+                </div>
+                <div class="status-tab red-tab">
+                    <span class="status-dot-red"></span>
+                    <span class="status-tab-text">Potential Legal Concern (1)</span>
+                </div>
+            </div>
+
+            <!-- Issue Accordion List -->
+            <div class="issues-list">
+                
+                <!-- Issue 1: Security Deposit Clause -->
+                <div class="issue-accordion-card attention-risk">
+                    <button class="issue-header" aria-expanded="false">
+                        <div class="issue-left">
+                            <span class="risk-badge-yellow">Medium Risk</span>
+                            <span class="issue-title-text">Security Deposit Clause</span>
+                        </div>
+                        <div class="issue-right-toggle">
+                            <span class="toggle-icon-arrow">&#9662;</span>
+                        </div>
+                    </button>
+                    <div class="issue-body-collapse">
+                        <div class="issue-content-details">
+                            <div class="meta-details-row">
+                                <span><strong>Category:</strong> Financial Obligations</span>
+                                <span><strong>Jurisdiction:</strong> <span class="juri-text">United States</span></span>
+                            </div>
+                            <p class="issue-description-text">
+                                The lease agreement states a security deposit requirement of <strong>$3,500</strong> on a monthly rent of <strong>$1,500</strong>. This exceeds typical statutory limitations in some regions.
+                            </p>
+                            <div class="recommendation-box">
+                                <span class="rec-label">💡 Recommendation:</span>
+                                <p class="rec-text">
+                                    State laws generally limit residential security deposits to 2 months' rent ($3,000 maximum). The current lease charges 2.3 months' rent. Request the landlord to amend the security deposit amount to comply with state statutes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue 2: Early Termination Clause -->
+                <div class="issue-accordion-card attention-risk">
+                    <button class="issue-header" aria-expanded="false">
+                        <div class="issue-left">
+                            <span class="risk-badge-yellow">Medium Risk</span>
+                            <span class="issue-title-text">Early Termination Clause</span>
+                        </div>
+                        <div class="issue-right-toggle">
+                            <span class="toggle-icon-arrow">&#9662;</span>
+                        </div>
+                    </button>
+                    <div class="issue-body-collapse">
+                        <div class="issue-content-details">
+                            <div class="meta-details-row">
+                                <span><strong>Category:</strong> Lease Term & Termination</span>
+                                <span><strong>Jurisdiction:</strong> <span class="juri-text">United States</span></span>
+                            </div>
+                            <p class="issue-description-text">
+                                Section 14 outlines an early lease termination notice requirement of <strong>90 days</strong> along with a penalty fee of three months' rent.
+                            </p>
+                            <div class="recommendation-box">
+                                <span class="rec-label">💡 Recommendation:</span>
+                                <p class="rec-text">
+                                    A 90-day notice period is highly restrictive. Local standard tenant laws restrict early notice requirements to 60 days. Propose modifying the clause to request a 60-day notice period and cap termination penalties to a maximum of two months' rent.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue 3: Maintenance Responsibility Clause -->
+                <div class="issue-accordion-card concern-risk">
+                    <button class="issue-header" aria-expanded="false">
+                        <div class="issue-left">
+                            <span class="risk-badge-red">High Priority</span>
+                            <span class="issue-title-text">Maintenance Responsibility Clause</span>
+                        </div>
+                        <div class="issue-right-toggle">
+                            <span class="toggle-icon-arrow">&#9662;</span>
+                        </div>
+                    </button>
+                    <div class="issue-body-collapse">
+                        <div class="issue-content-details">
+                            <div class="meta-details-row">
+                                <span><strong>Category:</strong> Repair & Habitability</span>
+                                <span><strong>Jurisdiction:</strong> <span class="juri-text">United States</span></span>
+                            </div>
+                            <p class="issue-description-text">
+                                Clause 9 states that the tenant is responsible for all repairs to major heating, cooling, plumbing, and electrical utilities under $250, and waives landlord liability for hot water outages.
+                            </p>
+                            <div class="recommendation-box danger-box">
+                                <span class="rec-label">⚠️ Legal Warning & Recommendation:</span>
+                                <p class="rec-text">
+                                    Landlords have an unwaivable duty under the statutory <strong>Warranty of Habitability</strong> to maintain heating, plumbing, and major utilities. Shifting repair burdens under $250 onto the tenant or waiving hot water liability is illegal. You should demand that the landlord remove this clause and restore full habitability coverage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Action Buttons Footer -->
+            <div class="results-actions-footer">
+                <button type="button" class="btn-primary-blue" id="btnViewFullReport">View Full Report</button>
+                <button type="button" class="btn-secondary-outline" id="btnDownloadPDF">Download PDF Report</button>
+                
+                <!-- Share Button & Dropdown Menu -->
+                <div class="share-dropdown-wrapper">
+                    <button type="button" class="btn-secondary-outline" id="btnShareReport" aria-haspopup="true" aria-expanded="false">
+                        <span>Share Report 📤</span>
+                    </button>
+                    <div class="share-dropdown-menu hidden" id="shareMenu" role="menu">
+                        <a href="#" class="share-menu-item" id="shareWhatsApp" role="menuitem" target="_blank">
+                            <span class="share-icon">💬</span> WhatsApp
+                        </a>
+                        <a href="#" class="share-menu-item" id="shareEmail" role="menuitem">
+                            <span class="share-icon">✉️</span> Email
+                        </a>
+                        <a href="#" class="share-menu-item" id="shareCopyLink" role="menuitem">
+                            <span class="share-icon">🔗</span> Copy Link
+                        </a>
+                    </div>
+                </div>
+
+                <a href="analyze.html" class="link-upload-another">Upload Another Lease</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="app-footer results-footer">
+        <div class="footer-brand-side">
+            <span class="footer-brand-logo-text">RentRight</span>
+            <span class="footer-brand-copy">&copy; 2024 RentRight Advocacy. All rights reserved. Empowering tenants through stable information.</span>
+        </div>
+        <div class="footer-links-side">
+            <a href="#" class="footer-link-sub" id="footerLegalAid">Legal Aid</a>
+            <span class="footer-separator">&middot;</span>
+            <a href="#" class="footer-link-sub">Privacy Policy</a>
+            <span class="footer-separator">&middot;</span>
+            <a href="#" class="footer-link-sub">Terms of Service</a>
+            <span class="footer-separator">&middot;</span>
+            <a href="#" class="footer-link-sub">Contact Support</a>
+        </div>
+    </footer>
+
+    <!-- Toast Notification container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Full Report Modal -->
+    <div class="modal-overlay hidden" id="fullReportModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <header class="modal-header">
+                <h3 id="modalTitle">Lease Analysis Full Report</h3>
+                <button type="button" class="btn-close-modal" id="btnCloseModal" aria-label="Close modal">&times;</button>
+            </header>
+            <div class="modal-body">
+                <div class="modal-doc-meta">
+                    <p><strong>Document Name:</strong> <span id="modalDocName">lease_agreement.pdf</span></p>
+                    <p><strong>Jurisdiction:</strong> <span class="juri-text">United States</span></p>
+                    <p><strong>Scan Date:</strong> <span id="modalScanDate">--</span></p>
+                </div>
+                
+                <div class="modal-stats-summary">
+                    <div class="modal-stat-pill">
+                        <span class="modal-stat-num">92%</span>
+                        <span class="modal-stat-label">Compliance</span>
+                    </div>
+                    <div class="modal-stat-pill">
+                        <span class="modal-stat-num">Low</span>
+                        <span class="modal-stat-label">Risk Level</span>
+                    </div>
+                    <div class="modal-stat-pill">
+                        <span class="modal-stat-num">42</span>
+                        <span class="modal-stat-label">Clauses</span>
+                    </div>
+                </div>
+
+                <!-- Accordions for the report -->
+                <div class="modal-issues-section">
+                    <h4 class="modal-section-title">Critical & Warning Clauses (3)</h4>
+                    <div class="modal-issues-list" id="modalIssuesList">
+                        <!-- Dynamically populated or cloned at runtime -->
+                    </div>
+                </div>
+
+                <div class="modal-compliant-section">
+                    <h4 class="modal-section-title">Compliant Clauses (39)</h4>
+                    <p class="section-desc-text">The following categories were analyzed and found to comply with your local tenant regulations:</p>
+                    
+                    <div class="compliant-accordion-list">
+                        <div class="compliant-card">
+                            <button class="compliant-header" aria-expanded="false" type="button">
+                                <div class="compliant-header-left">
+                                    <span class="compliant-badge-green">✓ Compliant</span>
+                                    <span class="compliant-title-text">Landlord Entry & Privacy (8 Clauses)</span>
+                                </div>
+                                <span class="toggle-icon-arrow">&#9662;</span>
+                            </button>
+                            <div class="compliant-body-collapse">
+                                <div class="compliant-content-details">
+                                    <p>The lease correctly requires a 24-hour notice before the landlord or maintenance staff enters the premises, aligning with local privacy protections.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compliant-card">
+                            <button class="compliant-header" aria-expanded="false" type="button">
+                                <div class="compliant-header-left">
+                                    <span class="compliant-badge-green">✓ Compliant</span>
+                                    <span class="compliant-title-text">Rent Payment & Grace Period (6 Clauses)</span>
+                                </div>
+                                <span class="toggle-icon-arrow">&#9662;</span>
+                            </button>
+                            <div class="compliant-body-collapse">
+                                <div class="compliant-content-details">
+                                    <p>Rent due dates, payment methods, and a standard 5-day grace period comply with regional banking and landlord-tenant rules.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compliant-card">
+                            <button class="compliant-header" aria-expanded="false" type="button">
+                                <div class="compliant-header-left">
+                                    <span class="compliant-badge-green">✓ Compliant</span>
+                                    <span class="compliant-title-text">Pet & Guest Policies (10 Clauses)</span>
+                                </div>
+                                <span class="toggle-icon-arrow">&#9662;</span>
+                            </button>
+                            <div class="compliant-body-collapse">
+                                <div class="compliant-content-details">
+                                    <p>Rules regarding guest occupancy limits (up to 14 consecutive days) and standard domestic pet policies are fair and lawful.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compliant-card">
+                            <button class="compliant-header" aria-expanded="false" type="button">
+                                <div class="compliant-header-left">
+                                    <span class="compliant-badge-green">✓ Compliant</span>
+                                    <span class="compliant-title-text">Utilities & Services (9 Clauses)</span>
+                                </div>
+                                <span class="toggle-icon-arrow">&#9662;</span>
+                            </button>
+                            <div class="compliant-body-collapse">
+                                <div class="compliant-content-details">
+                                    <p>Allocation of utility responsibilities (water, sewage, trash removal) matches standard local housing guidelines.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compliant-card">
+                            <button class="compliant-header" aria-expanded="false" type="button">
+                                <div class="compliant-header-left">
+                                    <span class="compliant-badge-green">✓ Compliant</span>
+                                    <span class="compliant-title-text">Subleasing & Occupancy (6 Clauses)</span>
+                                </div>
+                                <span class="toggle-icon-arrow">&#9662;</span>
+                            </button>
+                            <div class="compliant-body-collapse">
+                                <div class="compliant-content-details">
+                                    <p>The requirement for landlord consent prior to subletting is standard, and the clause contains a provision that consent cannot be unreasonably withheld.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button type="button" class="btn-primary-blue" id="btnModalDownloadPDF">Download PDF Report</button>
+                <button type="button" class="btn-secondary-outline" id="btnModalClose">Close Report</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="results.js"></script>
+</body>
+</html>

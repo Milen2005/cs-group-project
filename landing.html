@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RentRight SaaS Platform - Empowering tenants to protect their housing rights. Instantly scan leases, detect illegal terms, and generate dispute letters.">
+    <title>RentRight | Empowering Tenants, Protecting Homes</title>
+    <!-- Google Fonts: Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-page">
+
+    <!-- Header / Navbar -->
+    <header class="landing-header">
+        <div class="header-logo">
+            <svg class="header-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 50 16 L 84 44 V 82 H 16 V 44 Z" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="7.5" fill="var(--primary-color)" />
+                <path d="M 37 73 A 13 13 0 0 1 50 60 A 13 13 0 0 1 63 73" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" />
+            </svg>
+            <span class="header-brand-text-dark">RentRight</span>
+        </div>
+        <nav class="landing-nav">
+            <a href="#how-it-works" class="nav-link-landing active">How it Works</a>
+            <a href="#features" class="nav-link-landing">Features</a>
+            <a href="#why-it-matters" class="nav-link-landing">Impact</a>
+        </nav>
+        <div class="landing-actions">
+            <a href="index.html" class="signin-link">Sign in</a>
+            <a href="signup.html" class="btn-join-pill">Join</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero-section" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('assets/images/lease_holding.png');">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-dark">Know Your Rights.</span>
+                        <span class="title-blue">Protect Your Home.</span>
+                    </h1>
+                    <p class="hero-description">
+                        Upload your lease to instantly identify illegal clauses, understand your obligations in plain English, and generate professional dispute letters.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="analyze.html" class="btn-hero-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Scan My Lease</span>
+                        </a>
+                        <a href="#how-it-works" class="btn-hero-secondary">How it Works</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Glowing Digital Interface Overlay Mockup -->
+                    <div class="analysis-overlay-card">
+                        <div class="overlay-header">
+                            <span class="pulse-indicator"></span>
+                            <span class="overlay-header-text">LEASE AGREEMENT &ndash; ANALYSIS</span>
+                            <span class="overlay-tag">AI ACTIVE</span>
+                        </div>
+                        <div class="overlay-body">
+                            <div class="scan-line"></div>
+                            
+                            <div class="lease-doc-mock">
+                                <div class="doc-line doc-header-line"></div>
+                                <div class="doc-line doc-sub-line"></div>
+                                <div class="doc-line highlighted-error-line">
+                                    <div class="error-tooltip">
+                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ff3838" stroke-width="3">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                        <span>Illegal waiver of landlord liability found.</span>
+                                    </div>
+                                </div>
+                                <div class="doc-line"></div>
+                                <div class="doc-line highlighted-warning-line">
+                                    <div class="warning-tooltip">
+                                        <span>Excessive late fee (15% of rent).</span>
+                                    </div>
+                                </div>
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                            </div>
+                            
+                            <div class="analysis-sidebar">
+                                <div class="stat-circle">
+                                    <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="var(--primary-color)" />
+                                        <text x="18" y="20.35" class="percentage">92%</text>
+                                    </svg>
+                                    <span class="stat-label">Score</span>
+                                </div>
+                                <div class="issue-counter-box">
+                                    <div class="counter-num color-red">1</div>
+                                    <div class="counter-desc">Illegal Clause</div>
+                                </div>
+                                <div class="issue-counter-box">
+                                    <div class="counter-num color-yellow">1</div>
+                                    <div class="counter-desc">Unfair Term</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps Section -->
+        <section id="how-it-works" class="steps-section">
+            <div class="container">
+                <div class="section-header-centered">
+                    <h2 class="section-title-centered">Empowering You in Three Simple Steps</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="steps-grid">
+                    <!-- Column 1: Upload -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <svg class="step-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3 class="step-card-title">Upload</h3>
+                        <p class="step-card-description">
+                            Securely upload your lease agreement in PDF or image format.
+                        </p>
+                    </div>
+
+                    <!-- Column 2: Analyze -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <svg class="step-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <line x1="11" y1="8" x2="11" y2="14"></line>
+                                <line x1="8" y1="11" x2="14" y2="11"></line>
+                            </svg>
+                        </div>
+                        <h3 class="step-card-title">Analyze</h3>
+                        <p class="step-card-description">
+                            Our AI scans for legal violations and unfair terms specific to your local laws.
+                        </p>
+                    </div>
+
+                    <!-- Column 3: Act -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <svg class="step-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="step-card-title">Act</h3>
+                        <p class="step-card-description">
+                            Get a plain-English breakdown and generate a formal letter to your landlord.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="features-header">
+                    <h2 class="features-title">Powerful Tools for Every Tenant</h2>
+                    <p class="features-subtitle">Advanced technology meets legal expertise.</p>
+                </div>
+
+                <div class="features-cards-grid">
+                    <!-- Violation Detection Card -->
+                    <div class="feature-card flex-between">
+                        <div class="feature-card-text">
+                            <span class="feature-badge">LEGAL COMPLIANCE</span>
+                            <h3 class="feature-card-title">Violation Detection</h3>
+                            <p class="feature-card-desc">
+                                Instantly check if your lease violates state or local regulations. We flag prohibited terms like illegal entry clauses, unauthorized security deposit limits, and liability waivers before you sign.
+                            </p>
+                        </div>
+                        <div class="feature-card-visual">
+                            <div class="blurred-doc-mockup">
+                                <div class="blurred-text-block"></div>
+                                <div class="blurred-text-block w-80"></div>
+                                <div class="red-highlight-bar">
+                                    <span class="flag-icon">🚩 Illegal Term</span>
+                                </div>
+                                <div class="blurred-text-block"></div>
+                                <div class="blurred-text-block w-60"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plain English Explainer Card -->
+                    <div class="feature-card">
+                        <div class="feature-icon-box green">
+                            <!-- Translation Symbol -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 8h14M5 12h14M11 16h8M4 16l4-4-4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card-title">Plain English Explainer</h3>
+                        <p class="feature-card-desc">
+                            Legal contracts are intentionally confusing. Our AI translates dense jargon into easy-to-understand summaries, letting you know exactly what rules you are agreeing to regarding pets, guests, subleases, and maintenance.
+                        </p>
+                    </div>
+
+                    <!-- Full-Width Dispute Letter Banner -->
+                    <div class="full-width-banner-card">
+                        <div class="banner-content">
+                            <h3 class="banner-title">Dispute Letter Generator</h3>
+                            <p class="banner-description">
+                                Landlord ignoring repairs or refusing to return your security deposit? Instantly generate a formal, legally structured dispute letter. Our templates cite relevant tenant-landlord laws for your zip code, ready to download, sign, and mail.
+                            </p>
+                        </div>
+                        <div class="banner-action">
+                            <a href="signup.html" class="btn-banner-outlined">View Templates &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why It Matters Section -->
+        <section id="why-it-matters" class="impact-section">
+            <div class="container">
+                <div class="impact-header">
+                    <span class="impact-tag">WHY IT MATTERS</span>
+                    <h2 class="impact-title">Empowering tenants for a more stable future.</h2>
+                    <p class="impact-paragraph">
+                        Housing is a fundamental human right. Yet, tenants face structural disadvantages with complex, jargon-heavy lease agreements that often contain illegal clauses. RentRight levels the playing field by putting legal analysis tools directly in the hands of everyday renters, driving housing stability and protecting communities.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">Leases Scanned</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Cities Covered</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <div class="footer-top-grid">
+            <div class="footer-brand-column">
+                <div class="footer-logo">
+                    <svg class="footer-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M 50 16 L 84 44 V 82 H 16 V 44 Z" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="50" cy="50" r="7.5" fill="currentColor" />
+                        <path d="M 37 73 A 13 13 0 0 1 50 60 A 13 13 0 0 1 63 73" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" />
+                    </svg>
+                    <span class="footer-brand-text">RentRight</span>
+                </div>
+                <p class="footer-tagline">
+                    Protecting tenant rights through transparent, accessible information.
+                </p>
+            </div>
+            
+            <div class="footer-links-columns">
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Resources</h4>
+                    <ul class="footer-col-list">
+                        <li><a href="#how-it-works">How it Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Support</h4>
+                    <ul class="footer-col-list">
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Legal Disclaimer</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Legal</h4>
+                    <ul class="footer-col-list">
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <span class="footer-copyright-text">
+                &copy; 2024 RentRight Advocacy. All rights reserved. Empowering tenants through technology.
+            </span>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container (just in case) -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+</body>
+</html>
