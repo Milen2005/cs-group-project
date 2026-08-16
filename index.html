@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RentRight - Your Trusted Tenant Rights Assistant. Secure tenant dashboard login.">
+    <title>RentRight | Login</title>
+    <!-- Google Fonts: Inter for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="app-header">
+        <div class="header-logo">
+            <!-- Small SVG logo for header navigation -->
+            <svg class="header-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 50 16 L 84 44 V 82 H 16 V 44 Z" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="7.5" fill="var(--primary-color)" />
+                <path d="M 37 73 A 13 13 0 0 1 50 60 A 13 13 0 0 1 63 73" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" />
+            </svg>
+            <span class="header-brand-text">RentRight</span>
+        </div>
+        <div class="header-actions">
+            <button class="icon-btn-help" id="helpBtn" aria-label="Get Help & Tenant Support">
+                <svg class="help-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="login-wrapper">
+        <div class="login-card" id="loginCard">
+            <!-- Brand Logo Area inside the card -->
+            <div class="brand-container">
+                <div class="logo-box">
+                    <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="RentRight Logo">
+                        <path d="M 50 16 L 84 44 V 82 H 16 V 44 Z" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="50" cy="50" r="7.5" fill="var(--primary-color)" />
+                        <path d="M 37 73 A 13 13 0 0 1 50 60 A 13 13 0 0 1 63 73" fill="none" stroke="var(--primary-color)" stroke-width="7.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h1 class="brand-title">Sign in to your account</h1>
+                <p class="brand-subtitle">Enter your details to protect your tenant rights.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" novalidate>
+                <!-- Email Field Group -->
+                <div class="form-group" id="emailGroup">
+                    <label for="emailInput" class="form-label">Email Address</label>
+                    <div class="input-icon-wrapper">
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            name="email" 
+                            placeholder="name@example.com" 
+                            autocomplete="email"
+                            required>
+                        <!-- Mail SVG Icon -->
+                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <span class="error-message" id="emailError" role="alert"></span>
+                </div>
+
+                <!-- Password Field Group -->
+                <div class="form-group" id="passwordGroup">
+                    <div class="password-label-row">
+                        <label for="passwordInput" class="form-label">Password</label>
+                        <a href="#" class="forgot-link" tabindex="0">Forgot password?</a>
+                    </div>
+                    <div class="input-icon-wrapper password-wrapper">
+                        <input 
+                            type="password" 
+                            id="passwordInput" 
+                            name="password" 
+                            placeholder="••••••••" 
+                            autocomplete="current-password"
+                            required>
+                        <!-- Lock SVG Icon -->
+                        <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <button type="button" class="toggle-password-btn" id="togglePassword" aria-label="Show password" tabindex="0">
+                            <!-- SVG Open Eye -->
+                            <svg class="eye-icon eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <!-- SVG Closed Eye (Hidden by default) -->
+                            <svg class="eye-icon eye-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <span class="error-message" id="passwordError" role="alert"></span>
+                </div>
+
+                <!-- Remember Me Checkbox -->
+                <div class="checkbox-row">
+                    <label class="custom-checkbox-container">
+                        <input type="checkbox" id="rememberCheckbox" name="remember">
+                        <span class="checkmark-box">
+                            <svg class="checkmark-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span class="checkbox-label">Remember this device</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span class="btn-text">Login</span>
+                    <!-- Arrow Right SVG -->
+                    <svg class="btn-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                    <span class="spinner" id="btnSpinner" aria-hidden="true" style="display: none;"></span>
+                </button>
+            </form>
+
+            <!-- OR Divider -->
+            <div class="divider-row">OR</div>
+
+            <!-- Bottom Redirect CTA -->
+            <p class="signup-prompt">
+                Don't have an account? <a href="signup.html" class="signup-link">Sign up</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Toast Notification System (Dynamic premium component) -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Footer Area -->
+    <footer class="app-footer">
+        <div class="footer-copyright">
+            &copy; 2024 RentRight Advocacy. All rights reserved. Empowering tenants through stable information.
+        </div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <span class="footer-separator">&middot;</span>
+            <a href="#" class="footer-link">Terms of Service</a>
+            <span class="footer-separator">&middot;</span>
+            <a href="#" class="footer-link">Tenant Resources</a>
+            <span class="footer-separator">&middot;</span>
+            <a href="#" class="footer-link">Contact Support</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
