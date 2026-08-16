@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RentRight — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="position: relative; overflow-x: hidden;">
+
+  <!-- Decorative Animated Glowing Blobs in Background -->
+  <div class="glow-blob blue"></div>
+  <div class="glow-blob cyan"></div>
+  <div class="glow-blob purple" style="top: 80%; left: 10%;"></div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="index.html" aria-label="RentRight Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z" fill="var(--brand)"/>
+          <path d="M9 14h6v7H9v-7z" fill="#fff" opacity="0.3"/>
+        </svg>
+        <span>Rent<span class="brand-text">Right</span></span>
+      </a>
+      <nav class="nav-center" aria-label="Main navigation">
+        <a href="#steps">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#impact">Impact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="login.html" class="btn-signin">Sign In</a>
+        <a href="signup.html" class="btn-join">Join</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-landing">
+    <div class="hero-landing-container">
+      <div class="hero-content reveal active">
+        <div class="hero-tagline">Tenant Rights Assistant</div>
+        <h1>Know Your Rights.<br><span>Protect Your Home.</span></h1>
+        <p class="hero-desc">Upload your lease to instantly identify illegal clauses, understand your obligations in plain English, and generate professional dispute letters.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="lease.html">
+            <span style="display:flex;align-items:center;gap:8px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Scan My Lease
+            </span>
+          </a>
+          <a class="btn secondary" href="#steps">How It Works</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual reveal active reveal-delay-2">
+        <!-- Document Analysis Widget Mockup -->
+        <div class="mockup-container">
+          <div class="mockup-header">
+            <div class="mockup-header-dot"></div>
+            <div class="mockup-header-dot"></div>
+            <div class="mockup-header-dot"></div>
+            <span style="color:var(--muted);font-size:12px;margin-left:auto">lease_agreement.pdf</span>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-title">Lease Agreement Analysis</div>
+            <div class="mockup-bar"></div>
+            <div class="mockup-bar short"></div>
+            
+            <div class="mockup-card-item">
+              <div class="mockup-icon" style="background:rgba(239,68,68,0.1);color:var(--danger)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px;color:var(--danger)">Illegal Entry Clause Flagged</div>
+                <div style="font-size:11px;color:var(--muted)">Landlord entry requires 24h notice.</div>
+              </div>
+            </div>
+
+            <div class="mockup-card-item">
+              <div class="mockup-icon" style="background:rgba(245,158,11,0.1);color:var(--warning)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px;color:var(--warning)">Maintenance Deposit Issue</div>
+                <div style="font-size:11px;color:var(--muted)">Excessive security deposit terms found.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="steps" class="section-steps">
+    <div class="section-container-centered">
+      <div class="section-header-center reveal">
+        <h2>Empowering You in Three Simple Steps</h2>
+        <div class="section-title-divider"></div>
+      </div>
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-icon-bg upload">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h3>Upload</h3>
+          <p>Securely upload your lease agreement in PDF or image format.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-icon-bg analyze">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <h3>Analyze</h3>
+          <p>Our AI scans for legal violations and unfair terms specific to your local laws.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-icon-bg act">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3>Act</h3>
+          <p>Get a plain-English breakdown and generate a formal letter to your landlord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section-tools">
+    <div class="section-header-left reveal">
+      <h2>Powerful Tools for Every Tenant</h2>
+      <p>Advanced technology meets legal expertise.</p>
+    </div>
+    
+    <div class="tools-grid">
+      <!-- Tool 1 -->
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-icon-wrap" style="background:rgba(30,109,249,0.08);color:var(--brand)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-badge" style="background:rgba(30,109,249,0.1);color:var(--brand)">Legal Compliance</div>
+          <h3>Violation Detection</h3>
+          <p>Our engine automatically flags clauses that violate local housing codes, state statutes, or federal fair housing laws. We keep track of the fine print so you don't have to.</p>
+        </div>
+      </div>
+
+      <!-- Tool 2 -->
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-icon-wrap" style="background:rgba(16,185,129,0.08);color:var(--success)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-badge" style="background:rgba(16,185,129,0.1);color:var(--success)">Plain-English Translation</div>
+          <h3>Plain English Explainer</h3>
+          <p>Translates complex legal jargon into clear, actionable information you can actually understand. Know exactly what rights you retain and what duties you owe.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Callout Banner Card -->
+    <div class="banner-card reveal">
+      <div>
+        <h3>Dispute Letter Generator</h3>
+        <p>Creates ready-to-send formal notices for common maintenance and lease issues. Professional, firm, and legally sound documents generated in seconds.</p>
+      </div>
+      <a href="page3.html" class="btn" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px">
+        View Templates
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact" class="section-impact">
+    <div class="reveal">
+      <div class="impact-subtitle">Why It Matters</div>
+      <h2>Empowering tenants for a more stable future.</h2>
+      <p>Housing is a human right. We believe that technology should be used to bridge the legal knowledge gap, ensuring that every tenant, regardless of their background, can defend their right to a safe and fair home.</p>
+    </div>
+    
+    <div class="stats-grid reveal reveal-delay-2">
+      <div class="stat-item">
+        <div class="stat-number">
+          <!-- Animate from 0 to 10 on reveal trigger -->
+          <span class="countup" data-target="10" data-suffix="k+" data-duration="1500">0</span>
+        </div>
+        <div class="stat-label">Leases Scanned</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">
+          <span class="countup" data-target="50" data-suffix="+" data-duration="1500">0</span>
+        </div>
+        <div class="stat-label">Cities Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">
+          <span class="countup" data-target="24" data-suffix="/7" data-duration="1500">0</span>
+        </div>
+        <div class="stat-label">Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-main-container">
+      <div class="footer-brand-side">
+        <a class="logo" href="index.html">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z" fill="var(--brand)"/>
+          </svg>
+          <span>Rent<span>Right</span></span>
+        </a>
+        <p>Empowering tenants through technology and accessible legal information.</p>
+      </div>
+      
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#steps">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Support</a></li>
+            <li><a href="#">Legal Disclaimer</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 RentRight Advocacy. All rights reserved. Empowering tenants through technology.</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

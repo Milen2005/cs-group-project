@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RentRight — Lease Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="position: relative; overflow-x: hidden;">
+
+  <!-- Decorative Animated Glowing Blobs in Background -->
+  <div class="glow-blob blue" style="opacity: 0.12;"></div>
+  <div class="glow-blob cyan" style="opacity: 0.12;"></div>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="index.html" aria-label="RentRight Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z" fill="var(--brand)"/>
+        </svg>
+        <span>Rent<span class="brand-text">Right</span></span>
+      </a>
+      <nav class="nav-center" aria-label="Main navigation">
+        <a href="#">Resources</a>
+        <a href="index.html#steps">How It Works</a>
+      </nav>
+      <div class="nav-right">
+        <a href="login.html" class="btn-signin">Sign In</a>
+        <a href="signup.html" class="btn-join">Join</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Section -->
+  <div class="lease-heading-box" style="margin-top: 100px;">
+    <h1>Analyze Your Lease</h1>
+    <p>Upload your agreement to identify hidden clauses and legal protections.</p>
+  </div>
+
+  <!-- Main Scanner Card Container -->
+  <main class="centered-lease-container">
+    <section class="card-wide">
+      <!-- Tabs Header -->
+      <div class="tabs-header" role="tablist">
+        <div id="tabUpload" class="tab-btn active" role="tab" aria-selected="true">Upload File</div>
+        <div id="tabPaste" class="tab-btn" role="tab" aria-selected="false">Paste Text</div>
+      </div>
+
+      <!-- Upload Content Block -->
+      <div id="uploadArea">
+        <div class="upload-drag-area" id="dropzone">
+          <div class="upload-cloud-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h3>Drag and drop file</h3>
+          <p>PDF, JPG, or PNG up to 16MB</p>
+          <input id="fileInput" type="file" accept=".pdf,image/*" style="display:none" />
+          <button id="browseBtn" class="btn secondary" style="padding: 10px 18px; font-size: 14px;">Browse Files</button>
+        </div>
+
+        <!-- Region Dropdowns -->
+        <div class="region-row">
+          <select class="region-select">
+            <option>United States</option>
+          </select>
+          <select class="region-select">
+            <option>Select Region</option>
+            <option>California</option>
+            <option>New York</option>
+            <option>Texas</option>
+            <option>Washington</option>
+          </select>
+        </div>
+
+        <!-- Scan Button -->
+        <button id="scanBtn" class="btn primary" style="width:100%; margin-top: 20px;">Scan My Lease 📋</button>
+
+        <!-- Security lock note -->
+        <div class="security-lock-text">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1054D4">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Your document is processed securely. We use bank-level encryption to protect your privacy.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Badges Grid at the Bottom -->
+  <div class="badge-row-container">
+    <div class="badge-item-mini">
+      <div class="badge-mini-icon gavel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+      </div>
+      <div class="badge-mini-content">
+        <h4>Legal Accuracy</h4>
+        <p>Cross-referenced with local statutes.</p>
+      </div>
+    </div>
+
+    <div class="badge-item-mini">
+      <div class="badge-mini-icon eye">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </div>
+      <div class="badge-mini-content">
+        <h4>Hidden Fees</h4>
+        <p>We spot complex fee structures easily.</p>
+      </div>
+    </div>
+
+    <div class="badge-item-mini">
+      <div class="badge-mini-icon calendar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </div>
+      <div class="badge-mini-content">
+        <h4>Renewal Alerts</h4>
+        <p>Get notified of mandatory deadlines.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-main-container">
+      <div class="footer-brand-side">
+        <a class="logo" href="index.html">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V11.5z" fill="var(--brand)"/>
+          </svg>
+          <span>Rent<span>Right</span></span>
+        </a>
+        <p>Empowering tenants through technology and accessible legal information.</p>
+      </div>
+      
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="index.html#steps">How It Works</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Support</a></li>
+            <li><a href="#">Legal Disclaimer</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 RentRight Advocacy. All rights reserved. Empowering tenants through technology.</p>
+    </div>
+  </footer>
+
+  <!-- Simple script for page-level interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const tabUpload = document.getElementById('tabUpload');
+      const tabPaste = document.getElementById('tabPaste');
+      const uploadArea = document.getElementById('uploadArea');
+      const browseBtn = document.getElementById('browseBtn');
+      const fileInput = document.getElementById('fileInput');
+      const dropzone = document.getElementById('dropzone');
+      const scanBtn = document.getElementById('scanBtn');
+
+      tabUpload.addEventListener('click', function(){
+        tabUpload.classList.add('active');
+        tabPaste.classList.remove('active');
+        tabUpload.setAttribute('aria-selected', 'true');
+        tabPaste.setAttribute('aria-selected', 'false');
+      });
+
+      tabPaste.addEventListener('click', function(){
+        tabPaste.classList.add('active');
+        tabUpload.classList.remove('active');
+        tabPaste.setAttribute('aria-selected', 'true');
+        tabUpload.setAttribute('aria-selected', 'false');
+      });
+
+      browseBtn.addEventListener('click', function(){
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function(){
+        if(fileInput.files.length) {
+          dropzone.querySelector('h3').textContent = 'Selected: ' + fileInput.files[0].name;
+          dropzone.querySelector('p').textContent = ((fileInput.files[0].size)/1024/1024).toFixed(2) + ' MB';
+        }
+      });
+
+      dropzone.addEventListener('dragover', function(e){
+        e.preventDefault();
+        dropzone.style.background = 'rgba(30, 109, 249, 0.05)';
+      });
+
+      dropzone.addEventListener('dragleave', function(e){
+        dropzone.style.background = 'var(--bg-light)';
+      });
+
+      dropzone.addEventListener('drop', function(e){
+        e.preventDefault();
+        dropzone.style.background = 'var(--bg-light)';
+        const files = e.dataTransfer.files;
+        if(files.length) {
+          fileInput.files = files;
+          dropzone.querySelector('h3').textContent = 'Dropped: ' + files[0].name;
+          dropzone.querySelector('p').textContent = ((files[0].size)/1024/1024).toFixed(2) + ' MB';
+        }
+      });
+
+      // Hook scanBtn click inside main.js (we'll wire up the loader redirect there)
+    });
+  </script>
+  <script src="main.js" defer></script>
+</body>
+</html>
